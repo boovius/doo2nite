@@ -2,10 +2,7 @@
 
 /* Controllers */
 
-angular.module('myApp.controllers', []).
+angular.module('doo2nite.controllers', []).
   controller('MyCtrl1', [function() {
-
-  }])
-  .controller('MyCtrl2', [function() {
 
   }]);
