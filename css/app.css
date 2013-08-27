@@ -1,3 +1,82 @@
+.box {
+  border: 2px solid black;
+  margin: 0 auto;
+  width: 400px;
+}
+
+#ideabox{
+  height: 200px;
+}
+
+.idea{
+
+}
+
+.voted-on {
+
+}
+
+.unanimous{
+
+}
+
+#divider{
+  height: 50px;
+  background-color: black;
+  color: white;
+  padding-top: 25px;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+#messagebox {
+  height: 200px;
+  overflow: scroll;
+}
+
+#messagebox ul {
+  list-style: none;
+}
+
+.message {
+  width: 80%;
+  margin-bottom: 10px;
+}
+
+.message span {
+  width: 100px;
+  background-color: #ccc;
+  border-radius: 7px;
+  padding: 6px;
+  cursor: pointer;
+}
+
+.message span:hover {
+  background-color: #eee
+}
+
+.even-true{
+  text-align: right;
+}
+
+.even-false{
+  text-align: left;
+}
+
+.even-false span {
+  background-color: #999;
+}
+
+#input {
+  height: 50px;
+  font-size: 1.5em;
+}
+
+
+
+
+
+
 /* app css stylesheet */
 
 .menu {

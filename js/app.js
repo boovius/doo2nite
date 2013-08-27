@@ -2,4 +2,9 @@
 
 
 // Declare app level module which depends on filters, and services
-angular.module('doo2nite', ['doo2nite.controllers']);
+angular.module('doo2nite', 
+	[
+		'firebase',
+		'doo2nite.controllers'
+	]
+);
