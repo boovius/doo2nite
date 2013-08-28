@@ -43,12 +43,14 @@
 }
 
 #divider { 
-  height: 50px;
+  height: 70px;
   background-color: black;
   color: white;
-  padding-top: 25px;
-  font-size: 1.5em;
   text-align: center;
+}
+
+.app-title{
+  font-size: 1.5em;
 }
 
 #messagebox {
@@ -92,6 +94,7 @@
   width: 75%;
   height: 50px;
   font-size: 1.5em;
+  padding-left: 15px;
 }
 
 
