@@ -1,11 +1,13 @@
 .box {
   border: 2px solid black;
   margin: 0 auto;
-  width: 400px;
+  width: 50%;
 }
 
 #ideabox {
   height: 200px;
+  overflow: scroll;
+
 }
 
 #ideabox ul {
@@ -13,7 +15,23 @@
 }
 
 .idea {
+  width: 80%;
+  margin-bottom: 20px;
+}
 
+.idea div { 
+  width: 50%;
+  margin: 0 auto;
+  background-color: #ccc;
+  border-radius: 7px;
+  padding: 6px; 
+  text-align: center;
+  word-wrap: break-word;
+  cursor: pointer;
+}
+
+.idea div:hover {
+  background-color: #666;
 }
 
 .voted-on {
@@ -44,11 +62,10 @@
 
 .message {
   width: 80%;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .message span {
-  width: 100px;
   background-color: #ccc;
   border-radius: 7px;
   padding: 6px;
@@ -72,6 +89,7 @@
 }
 
 #input {
+  width: 75%;
   height: 50px;
   font-size: 1.5em;
 }
