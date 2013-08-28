@@ -4,11 +4,15 @@
   width: 400px;
 }
 
-#ideabox{
+#ideabox {
   height: 200px;
 }
 
-.idea{
+#ideabox ul {
+  list-style: none;
+}
+
+.idea {
 
 }
 
@@ -20,7 +24,7 @@
 
 }
 
-#divider{
+#divider { 
   height: 50px;
   background-color: black;
   color: white;
