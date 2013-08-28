@@ -7,7 +7,7 @@ angular.module('doo2nite.controllers', [])
 	.controller('ChatRoomCtrl', ['$scope', 'angularFire', function($scope, angularFire) {
 		
 		var url = 'https://doo2nite.firebaseio.com/room';
-		var promise = angularFire(url, $scope, 'room', { ideas: [] });
+		var promise = angularFire(url, $scope, 'room', { messages: [], ideas: [] });
 
 		promise.then(function(){
 			//$scope.$watch('room', $scope);
