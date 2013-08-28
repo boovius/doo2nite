@@ -11,7 +11,7 @@
   <div class='box' data-ng-controller='ChatRoomCtrl'>
     <div id='ideabox' class='box' >
       <ul>
-        <li class='' ng-repeat="idea in room.ideas">
+        <li class='' data-ng-repeat="idea in room.ideas">
           <span>{{idea.text}}</span>
         </li>
       </ul>
@@ -19,12 +19,12 @@
     <div id='divider' class='box'>Doo2Nite</div>
     <div id='messagebox' class='box'>
       <ul>
-        <li ng-repeat="message in room.messages" class='message even-{{message.even}}' >
-          <span data-ng-click='room.promote()'>{{message.text}}</span>
+        <li data-ng-repeat="message in room.messages" class='message even-{{message.even}}' >
+          <span data-ng-click='promote()'>{{message.text}}</span>
         </li>
       </ul>
     </div>
-    <form ng-submit="addMessage()">
+    <form data-ng-submit="addMessage()">
        <input type='text' id='input' class='box' data-ng-model='messageText' placeholder='type message here...'/>
        <input type="submit" value="Send">
     </form>
