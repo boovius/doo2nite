@@ -21,10 +21,13 @@
       <span class='app-title'>Doo2Nite</span><br>
       <span>thoughts</span>
     </div>
+    <div id='namebox' class='box'>
+      <label for="">Your name: </label><input id="name" type="text" ng-model="username">
+    </div>
     <div id='messagebox' class='box'>
       <ul>
         <li data-ng-repeat="message in messages" class='message even-{{message.even}}' >
-          <span data-ng-click='promote()'>{{message.text}}</span>
+          <em>{{message.sender}}</em> - <span data-ng-click='promote()'>{{message.text}}</span>
         </li>
       </ul>
     </div>

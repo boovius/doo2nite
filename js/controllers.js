@@ -10,9 +10,10 @@ angular.module('doo2nite.controllers', [])
 			var url = 'https://doo2nite.firebaseio.com/room';
 			$scope.messages = angularFireCollection(new Firebase(url + '/messages').limit(50));
 			$scope.ideas = angularFireCollection(new Firebase(url + '/ideas').limit(50));
+			$scope.username = 'Guest' + Math.floor(Math.random()*101);
 
 			$scope.addMessage = function() {
-				var message = { text: $scope.messageText };
+				var message = { text: $scope.messageText, sender: $scope.username };
 				message.even = $scope.messages.length % 2 === 0;
 			  $scope.messages.add(message);
 			  $scope.messageText = '';
