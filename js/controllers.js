@@ -4,29 +4,25 @@
 
 angular.module('doo2nite.controllers', [])
 
-	.controller('ChatRoomCtrl', ['$scope', 'angularFire', function($scope, angularFire) {
+	.controller('ChatRoomCtrl', ['$scope', 'angularFireCollection', 
+		function($scope, angularFireCollection) {
 		
-		var url = 'https://doo2nite.firebaseio.com/room';
-		var promise = angularFire(url, $scope, 'room', { messages: [] });
+			var url = 'https://doo2nite.firebaseio.com/room';
+			$scope.messages = angularFireCollection(new Firebase(url + '/messages').limit(50));
+			$scope.ideas = angularFireCollection(new Firebase(url + '/ideas').limit(50));
 
-		promise.then(function(){
-			//$scope.$watch('room', $scope);
-
-			$scope.room.ideas = [];
-
-			$scope.addMessage = function() {	
+			$scope.addMessage = function() {
 				var message = { text: $scope.messageText };
-				message.even = $scope.room.messages.length % 2 === 0;
-			  $scope.room.messages.push(message);	
+				message.even = $scope.messages.length % 2 === 0;
+			  $scope.messages.add(message);
 			  $scope.messageText = '';
 			};
 			
 			$scope.promote = function(){
-				$scope.room.ideas = $scope.room.ideas || [];
 				var idea = {text: this.message.text}
-				$scope.room.ideas.push(idea);
+				console.log($scope.ideas.add);
+				$scope.ideas.add(idea);
 			}
-		})
 
-	} /* end anymous function ChatRoomCtrl */
+		} /* end anymous function ChatRoomCtrl */
 ]); /* end angular.module.controller */
