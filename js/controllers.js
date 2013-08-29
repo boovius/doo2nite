@@ -20,10 +20,29 @@ angular.module('doo2nite.controllers', [])
 			};
 			
 			$scope.promote = function(){
-				var idea = {text: this.message.text}
+				console.log(this);
+				var idea = {text: this.message.text, votedon: true, voted: [$scope.username]}
 				$scope.ideas.add(idea);
 			}
 
+			$scope.voteup = function(){
+				console.log($scope.username);
+				console.log(this.idea.voted);
+				var notVoted = true;
+				for (var i=0; i<this.idea.voted.length; i++){
+					if (this.idea.voted[i] === $scope.username){
+						notVoted = false;
+						break;
+					}
+					else {
+						notVoted = true;
+					}
+				}
+				if (notVoted){
+					this.idea.voted.push($scope.username);
+					this.votedon = true;	
+				}
+			}
 		} /* end anymous function ChatRoomCtrl */
   ])
 	.directive('autoScroll', 
