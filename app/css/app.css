@@ -20,9 +20,7 @@
 }
 
 .idea div { 
-  width: 50%;
-  margin: 0 auto;
-  background-color: #ccc;
+
   border-radius: 7px;
   padding: 6px; 
   text-align: center;
@@ -34,8 +32,16 @@
   background-color: #666;
 }
 
-.voted-on {
+.voted-true {
+  width: 50%;
+  margin: 0 auto;
+  background-color: #339933;
+}
 
+.voted-false {
+  width: 50%;
+  margin: 0 auto;
+  background-color: #ccc;
 }
 
 .unanimous {
@@ -51,6 +57,15 @@
 
 .app-title{
   font-size: 1.5em;
+}
+
+#namebox { 
+  padding: 10px 0;
+  font-size: 1.2em;
+}
+
+#namebox label { 
+  padding-left: 20px;
 }
 
 #messagebox {
