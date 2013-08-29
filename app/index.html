@@ -12,21 +12,21 @@
     <div id='ideabox' class='box' >
       <ul>
         <li class='idea' data-ng-repeat="idea in ideas" | orderBy: 'idea.voted.length'>
-          <div id='idea-{{$index}}' class='voted-{{votedon}}' data-ng-click='voteup()'>{{idea.text}}</div>
+          <div id='idea-{{$index}}' data-ng-class='voted-{{votedon}}' data-ng-click='voteup()'>{{idea.text}}</div>
         </li>
       </ul>
     </div>
     <div id='divider' class='box'>
       <span>ideas</span><br>
       <span class='app-title'>Doo2Nite</span><br>
-      <span>thoughts</span>
+      <span>suggestions</span>
     </div>
     <div id='namebox' class='box'>
       <label for="">Your name: </label><input id="name" type="text" ng-model="username">
     </div>
     <div id='messagebox' class='box'>
       <ul>
-        <li data-ng-repeat="message in messages" class='message even-{{message.even}}'>
+        <li data-ng-repeat="message in messages" class='message even-{{$even}}'>
           <em>{{message.sender}}</em> - <span data-ng-click='promote()'>{{message.text}}</span>
         </li>
       </ul>
