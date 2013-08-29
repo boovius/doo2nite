@@ -27,8 +27,6 @@ angular.module('doo2nite.controllers', [])
 			}
 
 			$scope.voteup = function(){
-				console.log(this.idea.voted);
-
 
 				var notVoted = true;
 				for (var i=0; i<this.idea.voted.length; i++){
@@ -44,6 +42,7 @@ angular.module('doo2nite.controllers', [])
 					this.idea.voted.push($scope.username);
 					$scope.votedon = true;	
 				}
+				console.log(this);
 			}
 		} /* end anymous function ChatRoomCtrl */
   ])
