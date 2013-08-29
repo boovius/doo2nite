@@ -11,8 +11,8 @@
   <div data-ng-controller='ChatRoomCtrl'>
     <div id='ideabox' class='box' >
       <ul>
-        <li class='idea' data-ng-repeat="idea in ideas">
-          <div class='voted-{{idea.votedon}}' data-ng-click='voteup()'>{{idea.text}}</div>
+        <li class='idea' data-ng-repeat="idea in ideas" | orderBy: 'idea.voted.length'>
+          <div id='idea-{{$index}}' class='voted-{{votedon}}' data-ng-click='voteup()'>{{idea.text}}</div>
         </li>
       </ul>
     </div>
@@ -26,7 +26,7 @@
     </div>
     <div id='messagebox' class='box'>
       <ul>
-        <li data-ng-repeat="message in messages" class='message even-{{message.even}}' >
+        <li data-ng-repeat="message in messages" class='message even-{{message.even}}'>
           <em>{{message.sender}}</em> - <span data-ng-click='promote()'>{{message.text}}</span>
         </li>
       </ul>
