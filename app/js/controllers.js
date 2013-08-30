@@ -25,7 +25,10 @@ angular.module('doo2nite.controllers', [])
 				$scope.votedon = true;
 			}
 
-			$scope.voteup = function(index){
+		
+
+
+			$scope.voteup = function(){
 				var notVoted = true;
 				for (var i=0; i<this.idea.voted.length; i++){
 					if (this.idea.voted[i] === $scope.username){
@@ -38,7 +41,18 @@ angular.module('doo2nite.controllers', [])
 				}
 				if (notVoted){
 					this.idea.voted.push($scope.username);
-					this.idea.votedon = true;
+					console.log($scope.ideas.length);
+					var foo = {text: this.idea.text, voted: this.idea.voted};
+					console.log(foo);
+
+					$scope.ideas.remove(this.idea.$id);
+					$scope.ideas.add(foo);
+
+					
+					console.log($scope.ideas[$scope.ideas.length-1]);
+
+
+
 				}
 			}
 		} /* end anymous function ChatRoomCtrl */
