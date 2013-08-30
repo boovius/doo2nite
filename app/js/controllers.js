@@ -14,19 +14,18 @@ angular.module('doo2nite.controllers', [])
 
 			$scope.addMessage = function() {
 				var message = { text: $scope.messageText, sender: $scope.username };
-				$message.even = $scope.messages.length % 2 === 0;
+				message.even = $scope.messages.length % 2 === 0;
 			  $scope.messages.add(message);
 			  $scope.messageText = '';
 			};
 			
-			$scope.promote = function(){
+			$scope.promote = function(index){
 				var idea = {text: this.message.text, voted: [$scope.username]}
 				$scope.ideas.add(idea);
 				$scope.votedon = true;
-				console.log($scope.votedon);
 			}
 
-			$scope.voteup = function(){
+			$scope.voteup = function(index){
 
 				var notVoted = true;
 				for (var i=0; i<this.idea.voted.length; i++){
@@ -40,9 +39,8 @@ angular.module('doo2nite.controllers', [])
 				}
 				if (notVoted){
 					this.idea.voted.push($scope.username);
-					$scope.votedon = true;	
+					$scope.votedon = true;
 				}
-				console.log(this);
 			}
 		} /* end anymous function ChatRoomCtrl */
   ])
