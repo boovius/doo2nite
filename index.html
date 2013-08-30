@@ -12,7 +12,7 @@
     <div id='ideabox' class='box' >
       <ul>
         <li class='idea' data-ng-repeat="idea in ideas" | orderBy: 'idea.voted.length'>
-          <div id='idea-{{$index}}' data-ng-class='voted-{{votedon}}' data-ng-click='voteup()'>{{idea.text}}</div>
+          <div id='idea-{{$index}}' class='voted-{{votedon}}' data-ng-click='voteup($index)'>{{idea.text}}</div>
         </li>
       </ul>
     </div>
