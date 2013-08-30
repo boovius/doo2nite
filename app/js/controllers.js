@@ -47,11 +47,8 @@ angular.module('doo2nite.controllers', [])
 
 					$scope.ideas.remove(this.idea.$id);
 					$scope.ideas.add(foo);
-
 					
 					console.log($scope.ideas[$scope.ideas.length-1]);
-
-
 
 				}
 			}
