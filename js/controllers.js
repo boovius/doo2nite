@@ -1,4 +1,4 @@
-
+'use strict';
 
 /* Controllers */
 
@@ -26,7 +26,6 @@ angular.module('doo2nite.controllers', [])
 			}
 
 			$scope.voteup = function(index){
-
 				var notVoted = true;
 				for (var i=0; i<this.idea.voted.length; i++){
 					if (this.idea.voted[i] === $scope.username){
@@ -39,7 +38,7 @@ angular.module('doo2nite.controllers', [])
 				}
 				if (notVoted){
 					this.idea.voted.push($scope.username);
-					$scope.votedon = true;
+					this.idea.votedon = true;
 				}
 			}
 		} /* end anymous function ChatRoomCtrl */
