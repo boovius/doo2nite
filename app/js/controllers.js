@@ -25,8 +25,13 @@ angular.module('doo2nite.controllers', [])
 				$scope.votedon = true;
 			}
 
-		
+			$scope.votedon = function() {
+				return (this.idea.voted.indexOf($scope.username) != -1);
+			}
 
+			$scope.votes = function(){
+				return this.idea.voted.length;
+			}
 
 			$scope.voteup = function(){
 				var notVoted = true;
@@ -41,14 +46,7 @@ angular.module('doo2nite.controllers', [])
 				}
 				if (notVoted){
 					this.idea.voted.push($scope.username);
-					console.log($scope.ideas.length);
-					var foo = {text: this.idea.text, voted: this.idea.voted};
-					console.log(foo);
-
-					$scope.ideas.remove(this.idea.$id);
-					$scope.ideas.add(foo);
-					
-					console.log($scope.ideas[$scope.ideas.length-1]);
+					$scope.ideas.update(this.idea)
 
 				}
 			}
