@@ -6,9 +6,7 @@
   <link rel="stylesheet" href="css/app.css"/>
 </head>
 <body>
-  <h1>Doo2Nite</h1>
-
-  <div data-ng-controller='ChatRoomCtrl'>
+  <div id='app' data-ng-controller='ChatRoomCtrl'>
     <div id='ideabox' class='box' >
       <ul>
         <li class='idea' data-ng-repeat="idea in ideas | orderBy: 'voted.length':reverse=true">
@@ -17,12 +15,17 @@
       </ul>
     </div>
     <div id='divider' class='box'>
-      <span>ideas</span><br>
-      <span class='app-title'>Doo2Nite</span><br>
-      <span>suggestions</span>
-    </div>
-    <div id='namebox' class='box'>
-      <label for="">Your name: </label><input id="name" type="text" ng-model="username">
+      <div>
+        <span class='app-title'>Doo 2 Nite</span><br>
+      </div>
+      <div id='posits'>
+        <span>ideas</span><br><br>
+        <span>suggestions</span>
+      </div>
+      <div id='namebox'>
+        <label for="name">Your name:</label><br>
+        <input id="name" type="text" ng-model="username"/>
+      </div>
     </div>
     <div id='messagebox' class='box'>
       <ul>

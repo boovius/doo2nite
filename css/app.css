@@ -1,13 +1,23 @@
-.box {
-  border: 2px solid black;
-  margin: 0 auto;
+body{
+  background-image: url('../img/bg-nightlife.jpg');
+}
+
+#app {
+  margin: 10% auto;
   width: 50%;
+  border: 2px solid white;
+  border-radius: 15px;
+  background-color: rgba(0,0,0,.8);
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.box {
 }
 
 #ideabox {
   height: 200px;
   overflow: scroll;
-
 }
 
 #ideabox ul {
@@ -28,19 +38,19 @@
 }
 
 .idea div:hover {
-  background-color: #666;
+  background-color: #19DD89;
 }
 
 .voted-true {
   width: 50%;
   margin: 0 auto;
-  background-color: #339933;
+  background-color: #19DD89;
 }
 
 .voted-false {
   width: 50%;
   margin: 0 auto;
-  background-color: #ccc;
+  background-color: #708D91;
 }
 
 .unanimous {
@@ -50,26 +60,51 @@
 #divider { 
   height: 70px;
   background-color: black;
-  color: white;
+  color: #D31996;
   text-align: center;
 }
 
+#divider div {
+  float: left;
+  width: 30%;
+  padding-top: 2px;
+}
+
+#divider div:first-child {
+  padding-left: 10px;
+  padding-top: 15px;
+}
 .app-title{
   font-size: 1.5em;
 }
 
+#posits { 
+  color: #19DD89;
+  padding-top: 4px;
+}
+
+#divider div:last-child {
+  padding-top: 7px;
+}
+
+#name {
+  font-size: 1em;
+  border-radius: 6px;
+}
+
 #namebox { 
-  padding: 10px 0;
+  padding: 0 0;
   font-size: 1.2em;
 }
 
 #namebox label { 
-  padding-left: 20px;
+  
 }
 
 #messagebox {
   height: 200px;
   overflow: scroll;
+  color: black;
 }
 
 #messagebox ul {
@@ -89,7 +124,7 @@
 }
 
 .message span:hover {
-  background-color: #eee
+  background-color: #708D91;  
 }
 
 .even-true {
