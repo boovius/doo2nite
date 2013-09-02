@@ -29,9 +29,14 @@ body{
 
 #app-title{
   position: absolute;
-  top: 5px;
-  left: 10px;
-  font-size: 1.2em;
+  top: 7px;
+  left: 12px;
+  font-size: 1.4em;
+}
+
+.littles {
+  font-size: .4em;
+  color: white;
 }
 
 #namebox { 
