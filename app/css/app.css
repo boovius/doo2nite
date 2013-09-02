@@ -5,11 +5,10 @@ body{
 #app {
   margin: 10% auto;
   width: 50%;
-  border: 4px solid white; 
+  border: 4px ridge white; 
   border-radius: 15px;
   background-color: rgba(0,0,0,.8);
-  padding-bottom: 20px;
-  box-shadow: inset 0 4px 6px rgba(255, 255, 255, 0.25);
+  position: relative;
 }
 
 /* title-and-name nav */
@@ -17,33 +16,49 @@ body{
 #title-and-name {
   background-color: black;
   color: #D31996;
-  height: 50px;
+  height: 40px;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
-  padding: 10px 20px;
+  padding: 5px 10px;
+  border-bottom: 1px solid rgba(255,255,255, .2);
 }
 
 #title-and-name div {
-  float: left;
+  width: 27%;
 }
 
 #app-title{
-  font-size: 1.5em;
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  font-size: 1.2em;
 }
 
 #namebox { 
-  padding: 0 0;
-  font-size: 1.2em;
-  float: right;
+  margin: 0 auto;
+  text-align: center;
 }
-
 
 #name-input {
-  font-size: 1em;
-  border-radius: 6px;
-  
+  font-size: .7em;
+  border-radius: 4px;
 }
 
+#controls {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  text-align: right;
+}
+
+#controls a {
+  text-decoration: none;
+  color: white;
+}
+
+#controls a:hover {
+  color: green;
+}
 
 
 /* ideabox section */
@@ -96,9 +111,11 @@ body{
 
 
 #divider { 
-  height: 70px;
+  height: 50px;
   background-color: black;
   text-align: center;
+  border-top: 1px solid rgba(255,255,255, .2);
+  border-bottom: 1px solid rgba(255,255,255, .2);
 }
 
 
@@ -114,7 +131,7 @@ body{
 #messagebox {
   height: 200px;
   overflow: scroll;
-  color: black;
+  color: white;
 }
 
 #messagebox ul {
@@ -126,15 +143,12 @@ body{
   margin-bottom: 20px;
 }
 
-.message span {
+.message-content {
   background-color: #ccc;
   border-radius: 7px;
   padding: 6px;
   cursor: pointer;
-}
-
-.message span:hover {
-  background-color: #708D91;  
+  color: black;
 }
 
 .even-true {
@@ -145,8 +159,12 @@ body{
   text-align: left;
 }
 
-.even-false span {
+.even-false .message-content {
   background-color: #999;
+}
+
+.message-content:hover {
+  background-color: #708D91;  
 }
 
 
@@ -154,48 +172,35 @@ body{
 
 #message-input {
   background-color: black;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  padding: 5px 5px;
+  border-top: 1px solid rgba(255,255,255, .2); 
 }
 
 #input {
   width: 75%;
   height: 50px;
-  font-size: 1.5em;
-  padding-left: 15px;
+  font-size: 1.2em;
+  border-bottom-left-radius: 15px;
+  padding-left: 10px;
+}
+
+.button {
+  float: right;
+  width: 20%;
+}
+
+.button input {
+  font-size: 1.2em;
+  height: 55px;
+  width: 100%;
+  background-color: #9BF0E9;
+  border-bottom-right-radius: 15px;
+}
+
+.button input:hover {
+  background-color: #ED146F;
 }
 
 
-
-
-
-
-
-/* app css stylesheet */
-
-.menu {
-  list-style: none;
-  border-bottom: 0.1em solid black;
-  margin-bottom: 2em;
-  padding: 0 0 0.5em;
-}
-
-.menu:before {
-  content: "[";
-}
-
-.menu:after {
-  content: "]";
-}
-
-.menu > li {
-  display: inline;
-}
-
-.menu > li:before {
-  content: "|";
-  padding-right: 0.3em;
-}
-
-.menu > li:nth-child(1):before {
-  content: "";
-  padding: 0;
-}

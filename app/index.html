@@ -9,12 +9,13 @@
   <div id='app' data-ng-controller='ChatRoomCtrl'>
     <nav id='title-and-name'>
       <div id='app-title'>
-        <span>Doo 2 Nite</span><br>
+        <span>Doo 2<br> Nite</span>
       </div> <!-- end app-title -->
       <div id='namebox'>
-        <label for="name">Your name:</label><br>
+        <label for="name">Your name:</label>
         <input id="name-input" type="text" ng-model="username"/>
       </div> <!-- end namebox -->
+      <div id='controls'><a href='#'>Rooms</a></div>
     </nav><!-- end title-and-name nav -->
     <section id='ideabox'>
       <ul>
@@ -25,21 +26,21 @@
     </section> <!-- end ideabox section -->
     <section id='divider'>
       <div id='posits'>
-        <span>ideas</span><br><br>
+        <span>ideas</span><br>
         <span>suggestions</span>
       </div>
     </section> <!-- end divider section -->
     <section id='messagebox'>
       <ul>
         <li data-ng-repeat="message in messages" class='message even-{{$even}}'>
-          <em>{{message.sender}}</em> - <span data-ng-click='promote()'>{{message.text}}</span>
+          <span class='sender'>{{message.sender}}</span> - <span class='message-content' data-ng-click='promote()'>{{message.text}}</span>
         </li>
       </ul>
     </section>
     <section id='message-input'>
       <form data-ng-submit="addMessage()">
-        <input type='text' id='input' data-ng-model='messageText' placeholder='...type message here'/>
-        <input type="submit" value="Send">
+        <input type='text' id='input' data-ng-model='messageText' placeholder='...type suggestion here'/>
+        <div class='button'><input type="submit" value="Send"/></div>
       </form>
     </section> <!-- end message-input section -->
 
