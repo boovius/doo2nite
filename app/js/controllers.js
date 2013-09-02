@@ -29,10 +29,6 @@ angular.module('doo2nite.controllers', [])
 				return (this.idea.voted.indexOf($scope.username) != -1);
 			}
 
-			$scope.votes = function(){
-				return this.idea.voted.length;
-			}
-
 			$scope.voteup = function(){
 				var notVoted = true;
 				for (var i=0; i<this.idea.voted.length; i++){

@@ -11,7 +11,7 @@
   <div data-ng-controller='ChatRoomCtrl'>
     <div id='ideabox' class='box' >
       <ul>
-        <li class='idea' data-ng-repeat="idea in ideas | orderBy: votes()">
+        <li class='idea' data-ng-repeat="idea in ideas | orderBy: 'voted.length':reverse=true">
           <div id='idea-{{$index}}' class='box voted-{{votedon()}}' data-ng-click='voteup()'>{{idea.text}} - <span>{{idea.voted.length}}</span></div>
         </li>
       </ul>
