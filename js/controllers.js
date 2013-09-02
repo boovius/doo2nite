@@ -22,7 +22,6 @@ angular.module('doo2nite.controllers', [])
 			$scope.promote = function(index){
 				var idea = {text: this.message.text, voted: [$scope.username]}
 				$scope.ideas.add(idea);
-				$scope.votedon = true;
 			}
 
 			$scope.votedon = function() {
