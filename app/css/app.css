@@ -5,7 +5,7 @@ body{
 #app {
   margin: 10% auto;
   width: 50%;
-  border: 4px ridge white; 
+  border: 4px inset rgba(255,255,255, .7); 
   border-radius: 15px;
   background-color: rgba(0,0,0,.8);
   position: relative;
@@ -16,7 +16,7 @@ body{
 #title-and-name {
   background-color: black;
   color: #D31996;
-  height: 40px;
+  height: 30px;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   padding: 5px 10px;
@@ -39,15 +39,6 @@ body{
   color: white;
 }
 
-#namebox { 
-  margin: 0 auto;
-  text-align: center;
-}
-
-#name-input {
-  font-size: .7em;
-  border-radius: 4px;
-}
 
 #controls {
   position: absolute;
@@ -121,8 +112,23 @@ body{
   text-align: center;
   border-top: 1px solid rgba(255,255,255, .2);
   border-bottom: 1px solid rgba(255,255,255, .2);
+  position: relative;
 }
 
+#namebox { 
+  text-align: center;
+  color: #D31996;
+  position: absolute;
+  right: 5px;
+  top: 0px;
+  border-left: 1px solid white;
+  height: 100%;
+}
+
+#name-input {
+  font-size: .7em;
+  border-radius: 4px;
+}
 
 #posits { 
   color: #19DD89;
