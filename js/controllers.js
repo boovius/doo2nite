@@ -4,13 +4,14 @@
 
 angular.module('doo2nite.controllers', [])
 
-	.controller('ChatRoomCtrl', ['$scope', '$timeout','angularFireCollection', 
-		function($scope, $timeout, angularFireCollection) {
+	.controller('ChatRoomCtrl', ['$scope', '$timeout', '$cookies', 'angularFireCollection', 
+		function($scope, $timeout, $cookies, angularFireCollection) {
 		
 			var url = 'https://doo2nite.firebaseio.com/room';
 			$scope.messages = angularFireCollection(new Firebase(url + '/messages').limit(50));
 			$scope.ideas = angularFireCollection(new Firebase(url + '/ideas').limit(50));
 			$scope.username = 'Guest' + Math.floor(Math.random()*101);
+			console.log($cookies.username = $scope.username);
 
 			$scope.addMessage = function() {
 				var message = { text: $scope.messageText, sender: $scope.username };
@@ -46,8 +47,11 @@ angular.module('doo2nite.controllers', [])
 				}
 			}
 		} /* end anymous function ChatRoomCtrl */
-  ])
-	.directive('autoScroll', 
+  ]).controller('NewRoomCtrl', ['$scope', '$timeout', '$cookies', 'angularFireCollection', 
+			function($scope, $timeout, $cookies, angularFireCollection) {
+
+			}
+	]).directive('autoScroll', 
 		function($timeout) {
 	  return function(scope, elements, attrs) {
 	    scope.$watch("messages.length", function() {
