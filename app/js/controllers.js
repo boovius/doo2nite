@@ -51,10 +51,19 @@ angular.module('doo2nite.controllers', [])
 			function($scope, $timeout, $cookies, angularFireCollection) {
 
 			}
-	]).directive('autoScroll', 
+	]).directive('messageScroll', 
 		function($timeout) {
 	  return function(scope, elements, attrs) {
 	    scope.$watch("messages.length", function() {
+	      $timeout(function() {
+	        elements[0].scrollTop = elements[0].scrollHeight
+	      });
+	    });
+	  }
+}).directive('ideaScroll', 
+		function($timeout) {
+	  return function(scope, elements, attrs) {
+	    scope.$watch("ideas.length", function() {
 	      $timeout(function() {
 	        elements[0].scrollTop = elements[0].scrollHeight
 	      });
