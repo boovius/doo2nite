@@ -8,3 +8,15 @@ angular.module('doo2nite',
 		'doo2nite.controllers'
 	]
 );
+
+document.getElementById('controls').addEventListener('click', function(){
+	console.log('rooms clicked');
+	document.getElementById('flipBox').toggle();
+	return false;
+});
+
+document.getElementById('controls2').addEventListener('click', function(){
+	console.log('rooms clicked');
+	document.getElementById('flipBox').toggle();
+	return false;
+});
