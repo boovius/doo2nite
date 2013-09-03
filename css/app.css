@@ -4,7 +4,7 @@ body{
 
 #app {
   margin: 10% auto;
-  width: 50%;
+  width: 480px;
   border: 4px inset rgba(255,255,255, .7); 
   border-radius: 15px;
   background-color: rgba(0,0,0,.8);
