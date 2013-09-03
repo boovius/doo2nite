@@ -6,49 +6,9 @@
   <link rel="stylesheet" href="css/app.css"/>
 </head>
 <body>
-  <div id='app' data-ng-controller='ChatRoomCtrl'>
-    <nav id='title-and-name'>
-      <div id='app-title'>
-        <span>D<span class='littles'>oo </span>2<span class='littles'> </span> N<span class='littles'>ite</span></span>
-      </div> <!-- end app-title -->
-      <div id='controls'><a href='#'>Rooms</a></div>
-    </nav><!-- end title-and-name nav -->
-    <section id='ideabox'>
-      <ul>
-        <li class='idea' data-ng-repeat="idea in ideas | orderBy: 'voted.length':reverse=true">
-          <div id='idea-{{$index}}' class='box voted-{{votedon()}}' data-ng-click='voteup()'>{{idea.text}} - <span>{{idea.voted.length}}</span></div>
-        </li>
-      </ul>
-    </section> <!-- end ideabox section -->
-    <section id='divider'>
-      <div id='posits'>
-        <span>ideas</span><br>
-        <span>suggestions</span>
-      </div>
-      <div id='namebox'>
-        <label for="name">Your name:</label><br>
-        <input id="name-input" type="text" ng-model="username"/>
-      </div> <!-- end namebox -->
-    </section> <!-- end divider section -->
-    <section id='messagebox'>
-      <ul>
-        <li data-ng-repeat="message in messages" class='message even-{{$even}}'>
-          <span class='sender'>{{message.sender}}</span> - <span class='message-content' data-ng-click='promote()'>{{message.text}}</span>
-        </li>
-      </ul>
-    </section>
-    <section id='message-input'>
-      <form data-ng-submit="addMessage()">
-        <input type='text' id='input' data-ng-model='messageText' placeholder='...type suggestion here'/>
-        <div class='button'><input type="submit" value="Send"/></div>
-      </form>
-    </section> <!-- end message-input section -->
-
-  </div> <!-- end ChatRoomCtrl -->
-
-
-
-
+  <section ng-view></section>
+  
+    
 
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
