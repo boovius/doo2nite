@@ -7,8 +7,8 @@
   </nav><!-- end title-and-name nav -->
   <section id='roombox'>
     <ul>
-      <li class='room' data-ng-repeat="room in rooms | orderBy: 'voted.length':reverse=true">
-        <div id='room-{{$index}}'>{{room.room}}</div>
+      <li class='all-rooms' data-ng-repeat="room in rooms">
+        <div id='room-{{$index}}'><a href='http://localhost:8000/#/{{room.$id}}'>{{room.$id}}</a></div>
       </li>
     </ul>
   </section> <!-- end roombox section -->
