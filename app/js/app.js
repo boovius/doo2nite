@@ -9,7 +9,7 @@ angular.module('doo2nite',
 		'ngCookies'
 	]
 ).config(['$routeProvider', function($routeProvider) {
-		$routeProvider.when('/', {templateUrl: 'partials/room.html', controller: 'ChatRoomCtrl'});
 		$routeProvider.when('/new', {templateUrl: 'partials/new.html', controller: 'NewRoomCtrl'});
-    $routeProvider.otherwise({redirectTo: '/'});
+		$routeProvider.when('/:room', {templateUrl: 'partials/room.html', controller: 'ChatRoomCtrl'});
+    $routeProvider.otherwise({redirectTo: '/new'});
 }]);
