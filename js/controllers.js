@@ -47,11 +47,20 @@ angular.module('doo2nite.controllers', [])
 				}
 			}
 		} /* end anymous function ChatRoomCtrl */
-  ]).controller('NewRoomCtrl', ['$scope', '$timeout', '$cookies', 'angularFireCollection', 
-			function($scope, $timeout, $cookies, angularFireCollection) {
+  ])
 
+	.controller('NewRoomCtrl', ['$scope', '$timeout', '$location', '$cookies', 'angularFireCollection', 
+			function($scope, $timeout, $location, $cookies, angularFireCollection) {
+				$scope.newRoom = function(){
+					console.log('new room clicked!');
+					var pth = Math.floor(Math.random() * 99999);
+					$location.path("/" + pth);
+					return false;
 			}
-	]).directive('messageScroll', 
+		}
+	])
+
+	.directive('messageScroll', 
 		function($timeout) {
 	  return function(scope, elements, attrs) {
 	    scope.$watch("messages.length", function() {
@@ -60,7 +69,9 @@ angular.module('doo2nite.controllers', [])
 	      });
 	    });
 	  }
-}).directive('ideaScroll', 
+	})
+	
+	.directive('ideaScroll', 
 		function($timeout) {
 	  return function(scope, elements, attrs) {
 	    scope.$watch("ideas.length", function() {
