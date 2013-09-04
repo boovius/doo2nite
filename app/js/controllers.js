@@ -53,7 +53,7 @@ angular.module('doo2nite.controllers', [])
 	.controller('NewRoomCtrl', ['$scope', '$timeout', '$location', '$cookies', 'angularFireCollection', 
 			function($scope, $timeout, $location, $cookies, angularFireCollection) {
 				var url = 'https://doo2nite.firebaseio.com/rooms/';
-				$scope.rooms = angularFireCollection(Firebase(url)); 	
+				$scope.rooms = angularFireCollection(new Firebase(url)); 	
 
 
 				$scope.newRoom = function(){
