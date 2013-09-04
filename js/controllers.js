@@ -4,14 +4,15 @@
 
 angular.module('doo2nite.controllers', [])
 
-	.controller('ChatRoomCtrl', ['$scope', '$timeout', '$cookies', 'angularFireCollection', 
-		function($scope, $timeout, $cookies, angularFireCollection) {
+	.controller('ChatRoomCtrl', ['$scope', '$timeout', '$routeParams', '$cookies', 'angularFireCollection', 
+		function($scope, $timeout, $routeParams, $cookies, angularFireCollection) {
 		
-			var url = 'https://doo2nite.firebaseio.com/room';
+
+			var url = 'https://doo2nite.firebaseio.com/rooms/' + $routeParams.room;
 			$scope.messages = angularFireCollection(new Firebase(url + '/messages').limit(50));
 			$scope.ideas = angularFireCollection(new Firebase(url + '/ideas').limit(50));
 			$scope.username = 'Guest' + Math.floor(Math.random()*101);
-			console.log($cookies.username = $scope.username);
+			
 
 			$scope.addMessage = function() {
 				var message = { text: $scope.messageText, sender: $scope.username };
@@ -51,10 +52,16 @@ angular.module('doo2nite.controllers', [])
 
 	.controller('NewRoomCtrl', ['$scope', '$timeout', '$location', '$cookies', 'angularFireCollection', 
 			function($scope, $timeout, $location, $cookies, angularFireCollection) {
+				var url = 'https://doo2nite.firebaseio.com/rooms/';
+				$scope.rooms = angularFireCollection(Firebase(url)); 	
+
+
 				$scope.newRoom = function(){
 					console.log('new room clicked!');
 					var pth = Math.floor(Math.random() * 99999);
 					$location.path("/" + pth);
+					
+					alert('room url: ' + $location.absUrl());
 					return false;
 			}
 		}

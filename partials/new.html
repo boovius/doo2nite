@@ -5,5 +5,12 @@
     </div> <!-- end app-title -->
     <div id='controls' data-ng-click="newRoom()"><a href=''>Rooms</a></div>
   </nav><!-- end title-and-name nav -->
+  <section id='roombox'>
+    <ul>
+      <li class='room' data-ng-repeat="room in rooms | orderBy: 'voted.length':reverse=true">
+        <div id='room-{{$index}}'>{{room.room}}</div>
+      </li>
+    </ul>
+  </section> <!-- end roombox section -->
 
 </div> <!-- end ChatRoomCtrl -->
