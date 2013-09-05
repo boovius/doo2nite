@@ -107,12 +107,17 @@ body{
 
 
 #divider { 
-  height: 50px;
+  height: 65px;
   background-color: black;
   text-align: center;
   border-top: 1px solid rgba(255,255,255, .2);
   border-bottom: 1px solid rgba(255,255,255, .2);
   position: relative;
+}
+
+.room-name {
+  color: #D31996;
+  font-size: 1.2em;
 }
 
 #namebox { 
@@ -216,7 +221,23 @@ body{
 
 /* NEW ROOM View */
 
-.all-rooms {
-  
+.create-room { 
+  padding-left: 20px;
+}
+
+.create-room label { 
   color: white;
+  cursor: pointer;
+}
+
+.all-rooms {
+  color: white;
+}
+
+.all-rooms a {
+  color: white;
+}
+
+.all-rooms a:hover {
+  color: green;
 }
