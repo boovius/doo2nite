@@ -2,13 +2,28 @@
 
 /* Controllers */
 
-angular.module('doo2nite.controllers', [])
+var doo2nite = angular.module('doo2nite.controllers', [])
 
-	.controller('ChatRoomCtrl', ['$scope', '$timeout', '$routeParams', '$cookies', 'angularFireCollection', 
-		function($scope, $timeout, $routeParams, $cookies, angularFireCollection) {
-		
+	.controller('ChatRoomCtrl', ['$scope', 'RoomName', '$timeout', '$routeParams', '$cookies', 'angularFireCollection', 
+		function($scope, RoomName, $timeout, $routeParams, $cookies, angularFireCollection) {
+			console.log('Room Name Message:');
+			console.log(RoomName.message);
+			$scope.roomName = RoomName.message;
+			console.log('$routeParams');
+			console.log($routeParams);
 
 			var url = 'https://doo2nite.firebaseio.com/rooms/' + $routeParams.room;
+			
+
+			$scope.room = angularFireCollection(new Firebase(url + '/room'));
+			
+			console.log($scope.room);
+			if ($scope.room.length == 0) {
+				$scope.room.add({roomName: RoomName.message});				
+			}
+			console.log($scope.room.length);
+
+
 			$scope.messages = angularFireCollection(new Firebase(url + '/messages').limit(50));
 			$scope.ideas = angularFireCollection(new Firebase(url + '/ideas').limit(50));
 			$scope.username = 'Guest' + Math.floor(Math.random()*101);
@@ -48,10 +63,12 @@ angular.module('doo2nite.controllers', [])
 				}
 			}
 		} /* end anymous function ChatRoomCtrl */
-  ])
+  ]) /*end controller ChatRoomCtrl */
 
-	.controller('NewRoomCtrl', ['$scope', '$timeout', '$location', '$cookies', 'angularFireCollection', 
-			function($scope, $timeout, $location, $cookies, angularFireCollection) {
+	.controller('NewRoomCtrl', ['$scope', 'RoomName', '$timeout', '$location', '$cookies', 'angularFireCollection', 
+			function($scope, RoomName, $timeout, $location, $cookies, angularFireCollection) {
+				console.log(RoomName.message);
+
 				var url = 'https://doo2nite.firebaseio.com/rooms/';
 				$scope.rooms = angularFireCollection(new Firebase(url)); 	
 
@@ -60,31 +77,39 @@ angular.module('doo2nite.controllers', [])
 					console.log('new room clicked!');
 					var pth = Math.floor(Math.random() * 99999);
 					$location.path("/" + pth);
-					
-					alert('room url: ' + $location.absUrl());
+					RoomName.message = $scope.roomName; 
+					alert('Send the following link to your friends: ' + "\n" + $location.absUrl());
 					return false;
 			}
 		}
-	])
+	]) /* end NewRoomCtrl angular.module.controller */
 
-	.directive('messageScroll', 
-		function($timeout) {
-	  return function(scope, elements, attrs) {
-	    scope.$watch("messages.length", function() {
-	      $timeout(function() {
-	        elements[0].scrollTop = elements[0].scrollHeight
-	      });
-	    });
-	  }
-	})
-	
-	.directive('ideaScroll', 
-		function($timeout) {
-	  return function(scope, elements, attrs) {
-	    scope.$watch("ideas.length", function() {
-	      $timeout(function() {
-	        elements[0].scrollTop = elements[0].scrollHeight
-	      });
-	    });
-	  }
-}); /* end angular.module.controller */
+.directive('messageScroll', 
+	function($timeout) {
+  return function(scope, elements, attrs) {
+    scope.$watch("messages.length", function() {
+      $timeout(function() {
+        elements[0].scrollTop = elements[0].scrollHeight
+      });
+    });
+  }
+})
+
+.directive('ideaScroll', 
+	function($timeout) {
+  return function(scope, elements, attrs) {
+    scope.$watch("ideas.length", function() {
+      $timeout(function() {
+        elements[0].scrollTop = elements[0].scrollHeight
+      });
+    });
+  }
+})
+
+.factory('RoomName', function(){
+	return {message: "Room"}
+}); 
+
+
+
+
