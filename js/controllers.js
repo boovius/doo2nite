@@ -24,8 +24,8 @@ var doo2nite = angular.module('doo2nite.controllers', [])
 			console.log($scope.room.length);
 
 
-			$scope.messages = angularFireCollection(new Firebase(url + '/messages').limit(50));
-			$scope.ideas = angularFireCollection(new Firebase(url + '/ideas').limit(50));
+			$scope.messages = angularFireCollection(new Firebase(url + '/messages'));
+			$scope.ideas = angularFireCollection(new Firebase(url + '/ideas'));
 			$scope.username = 'Guest' + Math.floor(Math.random()*101);
 			
 
