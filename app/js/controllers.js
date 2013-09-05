@@ -14,9 +14,9 @@ var doo2nite = angular.module('doo2nite.controllers', [])
 
 			var url = 'https://doo2nite.firebaseio.com/rooms/' + $routeParams.room;
 			
-
 			$scope.room = angularFireCollection(new Firebase(url + '/room'));
 			
+			//only adding room name if room name hasn't been set yet
 			console.log($scope.room);
 			if ($scope.room.length == 0) {
 				$scope.room.add({roomName: RoomName.message});				
@@ -50,6 +50,10 @@ var doo2nite = angular.module('doo2nite.controllers', [])
 				for (var i=0; i<this.idea.voted.length; i++){
 					if (this.idea.voted[i] === $scope.username){
 						notVoted = false;
+						this.idea.voted.pop($scope.username);
+						if (this.idea.voted.length == 0){
+							$scope.ideas.remove(this.idea);
+						}
 						break;
 					}
 					else {
@@ -107,7 +111,8 @@ var doo2nite = angular.module('doo2nite.controllers', [])
 })
 
 .factory('RoomName', function(){
-	return {message: "Room"}
+	var roomName = 'Room' + Math.floor(Math.random()*101);
+	return {message: roomName}
 }); 
 
 
