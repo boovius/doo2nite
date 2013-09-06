@@ -8,35 +8,20 @@ var doo2nite = angular.module('doo2nite.controllers', [])
 		function($scope, $rootScope, RoomName, $timeout, $routeParams, $cookies, angularFireCollection) {
 
 			var url = 'https://doo2nite.firebaseio.com/rooms/' + $routeParams.room;
-			$scope.room = new Firebase(url);
+			$rootScope.room = new Firebase(url);
 
-			$scope.roomName = '';
-			$scope.fired = "false"
-			var rmNm = '';
 
-			// $scope.$watch('roomName', function(){
-
-			// });
-
-			$scope.getRoomName = function(){
-				 console.log("hello world")
-			}
-			$scope.room.on('value', $scope.setroom = function(dataSnapShot){
+			$rootScope.room.once('value', function(dataSnapShot){
 				var ref = dataSnapShot.ref();
 				if (!dataSnapShot.hasChild('roomName'))
 				{
-					ref.set({roomName: RoomName.message});
+					ref.set({roomName: $rootScope.roomName});
 				}
 				else {
-					this.roomName = dataSnapShot.val().roomName;
-					console.log(this.roomName);
+					$rootScope.roomName = dataSnapShot.val().roomName;
+					$rootScope.$apply();
 				}
-			},function(){},$scope)
-			
-			$scope.watchfunc = function(){
-				console.log($scope);	
-			}
-			$scope.$watch("setroom", $scope.watchfunc())
+			})
 
 
 	
@@ -94,8 +79,8 @@ var doo2nite = angular.module('doo2nite.controllers', [])
 		} /* end anymous function ChatRoomCtrl */
   ]) /*end controller ChatRoomCtrl */
 
-	.controller('NewRoomCtrl', ['$scope', 'RoomName', '$timeout', '$location', '$cookies', 'angularFireCollection', 
-			function($scope, RoomName, $timeout, $location, $cookies, angularFireCollection) {
+	.controller('NewRoomCtrl', ['$scope', '$rootScope', 'RoomName', '$timeout', '$location', '$cookies', 'angularFireCollection', 
+			function($scope, $rootScope, RoomName, $timeout, $location, $cookies, angularFireCollection) {
 
 				var url = 'https://doo2nite.firebaseio.com/rooms/';
 				$scope.rooms = angularFireCollection(new Firebase(url)); 	
@@ -105,7 +90,8 @@ var doo2nite = angular.module('doo2nite.controllers', [])
 					console.log('new room clicked!');
 					var pth = Math.floor(Math.random() * 99999);
 					$location.path("/" + pth);
-					RoomName.message = $scope.roomName; 
+					var randomRoom = 'Room' + Math.floor(Math.random()*101);
+					$rootScope.roomName = $scope.roomName || randomRoom;
 					alert('Send the following link to your friends: ' + "\n" + $location.absUrl());
 					return false;
 			}
