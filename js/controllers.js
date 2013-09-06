@@ -8,9 +8,9 @@ var doo2nite = angular.module('doo2nite.controllers', [])
 		function($scope, $rootScope, RoomName, $timeout, $routeParams, $cookies, angularFireCollection) {
 
 			var url = 'https://doo2nite.firebaseio.com/rooms/' + $routeParams.room;
+
+			//setting room name 
 			$rootScope.room = new Firebase(url);
-
-
 			$rootScope.room.once('value', function(dataSnapShot){
 				var ref = dataSnapShot.ref();
 				if (!dataSnapShot.hasChild('roomName'))
@@ -23,23 +23,28 @@ var doo2nite = angular.module('doo2nite.controllers', [])
 				}
 			})
 
-
-	
-
-
-
-			//setting local room name prop in dom 
+			//setting user name
+			$scope.showNameInput = true;
+			if ($cookies.username){
+				$scope.username = $cookies.username;
+			}
+			else
+			{
+				$scope.username = 'Guest' + Math.floor(Math.random()*101);
+			}
 			
-
-
 
 			$scope.messages = angularFireCollection(new Firebase(url + '/messages'));
 			$scope.ideas = angularFireCollection(new Firebase(url + '/ideas'));
 			$scope.users = angularFireCollection(new Firebase(url + '/users'));
-			$scope.username = 'Guest' + Math.floor(Math.random()*101);
+			
 			
 
 			$scope.addMessage = function() {
+				$scope.showNameInput = false;
+				$scope.showNameStatic = true;
+				$cookies.username = $scope.username;
+				console.log('$cookies.username after message send', $cookies.username);
 				var message = { text: $scope.messageText, sender: $scope.username };
 				message.even = $scope.messages.length % 2 === 0;
 			  $scope.messages.add(message);
@@ -90,7 +95,7 @@ var doo2nite = angular.module('doo2nite.controllers', [])
 					console.log('new room clicked!');
 					var pth = Math.floor(Math.random() * 99999);
 					$location.path("/" + pth);
-					var randomRoom = 'Room' + Math.floor(Math.random()*101);
+					var randomRoom = 'Room ' + pth;
 					$rootScope.roomName = $scope.roomName || randomRoom;
 					alert('Send the following link to your friends: ' + "\n" + $location.absUrl());
 					return false;

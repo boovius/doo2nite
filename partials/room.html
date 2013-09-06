@@ -19,8 +19,11 @@
       <span>suggestions</span>
     </div>
     <div id='namebox'>
-      <label for="name">Your name:</label><br>
-      <input id="name-input" type="text" ng-model="username"/>
+      <div id='namebox-input' data-ng-show='showNameInput'>
+        <label for="name">Your name:</label><br>
+        <input id="name-input" type="text" ng-model="username"/>
+      </div>
+      <div id='namebox-static' data-ng-show='showNameStatic'>name: <br><span>{{username}}<span></div>
     </div> <!-- end namebox -->
   </section> <!-- end divider section -->
   <section id='messagebox' message-scroll='messages'>
