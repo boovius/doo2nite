@@ -12,9 +12,9 @@
       <a href='' data-ng-click="newRoom()">Create Room</a>
     </div>
     <ul class='all-rooms'>
-      <li  data-ng-repeat="roomObjects in rooms">
-        <div id='room-{{$index}}'><a href='http://localhost:8000/#/{{roomObjects.$id}}'>
-          <text ng-repeat="object in roomObjects.room"> {{object.roomName}}</text>
+      <li  data-ng-repeat="room in rooms">
+        <div id='room-{{$index}}'><a href='http://localhost:8000/#/{{room.$id}}'>
+          <text> {{room.roomName}}</text>
         </a></div>
       </li>
     </ul>
