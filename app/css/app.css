@@ -120,6 +120,11 @@ body{
   font-size: 1.2em;
 }
 
+#posits { 
+  color: #19DD89;
+  padding-top: 4px;
+}
+
 #namebox { 
   text-align: center;
   color: #D31996;
@@ -127,7 +132,11 @@ body{
   right: 5px;
   top: 0px;
   border-left: 1px solid white;
+  padding-left: 10px;
   height: 100%;
+}
+#namebox-input {
+  margin-top: 5px;
 }
 
 #name-input {
@@ -135,10 +144,18 @@ body{
   border-radius: 4px;
 }
 
-#posits { 
-  color: #19DD89;
-  padding-top: 4px;
+#namebox-static { 
+  margin-top: 5px; 
+  color: white;
 }
+
+#namebox-static span { 
+  font-size: 1.1em;
+  color: #D31996;
+}
+
+
+
 
 
 /* messagebox section */
