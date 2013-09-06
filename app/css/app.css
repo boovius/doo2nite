@@ -5,7 +5,7 @@ body{
 #app {
   margin: 10% auto;
   width: 480px;
-  border: 4px inset rgba(255,255,255, .7); 
+  border: 12px inset rgba(255,255,255,.2); 
   border-radius: 15px;
   background-color: rgba(0,0,0,.8);
   position: relative;
@@ -75,7 +75,6 @@ body{
 }
 
 .idea div { 
-  border-radius: 7px;
   padding: 6px; 
   text-align: center;
   word-wrap: break-word;
@@ -233,7 +232,7 @@ body{
 }
 
 .button input:hover {
-  background-color: #ED146F;
+  background-color: #ED146F; 
 }
 
 /* NEW ROOM View */
