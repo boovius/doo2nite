@@ -4,28 +4,53 @@
 
 var doo2nite = angular.module('doo2nite.controllers', [])
 
-	.controller('ChatRoomCtrl', ['$scope', 'RoomName', '$timeout', '$routeParams', '$cookies', 'angularFireCollection', 
-		function($scope, RoomName, $timeout, $routeParams, $cookies, angularFireCollection) {
-			console.log('Room Name Message:');
-			console.log(RoomName.message);
-			$scope.roomName = RoomName.message;
-			console.log('$routeParams');
-			console.log($routeParams);
+	.controller('ChatRoomCtrl', ['$scope', '$rootScope', 'RoomName', '$timeout', '$routeParams', '$cookies', 'angularFireCollection', 
+		function($scope, $rootScope, RoomName, $timeout, $routeParams, $cookies, angularFireCollection) {
 
 			var url = 'https://doo2nite.firebaseio.com/rooms/' + $routeParams.room;
-			
-			$scope.room = angularFireCollection(new Firebase(url + '/room'));
-			
-			//only adding room name if room name hasn't been set yet
-			console.log($scope.room);
-			if ($scope.room.length == 0) {
-				$scope.room.add({roomName: RoomName.message});				
+			$scope.room = new Firebase(url);
+
+			$scope.roomName = '';
+			$scope.fired = "false"
+			var rmNm = '';
+
+			// $scope.$watch('roomName', function(){
+
+			// });
+
+			$scope.getRoomName = function(){
+				 console.log("hello world")
 			}
-			console.log($scope.room.length);
+			$scope.room.on('value', $scope.setroom = function(dataSnapShot){
+				var ref = dataSnapShot.ref();
+				if (!dataSnapShot.hasChild('roomName'))
+				{
+					ref.set({roomName: RoomName.message});
+				}
+				else {
+					this.roomName = dataSnapShot.val().roomName;
+					console.log(this.roomName);
+				}
+			},function(){},$scope)
+			
+			$scope.watchfunc = function(){
+				console.log($scope);	
+			}
+			$scope.$watch("setroom", $scope.watchfunc())
+
+
+	
+
+
+
+			//setting local room name prop in dom 
+			
+
 
 
 			$scope.messages = angularFireCollection(new Firebase(url + '/messages'));
 			$scope.ideas = angularFireCollection(new Firebase(url + '/ideas'));
+			$scope.users = angularFireCollection(new Firebase(url + '/users'));
 			$scope.username = 'Guest' + Math.floor(Math.random()*101);
 			
 
@@ -71,7 +96,6 @@ var doo2nite = angular.module('doo2nite.controllers', [])
 
 	.controller('NewRoomCtrl', ['$scope', 'RoomName', '$timeout', '$location', '$cookies', 'angularFireCollection', 
 			function($scope, RoomName, $timeout, $location, $cookies, angularFireCollection) {
-				console.log(RoomName.message);
 
 				var url = 'https://doo2nite.firebaseio.com/rooms/';
 				$scope.rooms = angularFireCollection(new Firebase(url)); 	
