@@ -52,7 +52,8 @@ var doo2nite = angular.module('doo2nite.controllers', [])
 			};
 			
 			$scope.promote = function(index){
-				var idea = {text: this.message.text, voted: [$scope.username]}
+				var idea = {text: this.message.text, sender: this.message.sender, voted: [$scope.username]}
+				$scope.messages.remove(this.message);
 				$scope.ideas.add(idea);
 			}
 
@@ -67,7 +68,10 @@ var doo2nite = angular.module('doo2nite.controllers', [])
 						notVoted = false;
 						this.idea.voted.pop($scope.username);
 						if (this.idea.voted.length == 0){
+							var message = {text: this.idea.text, sender: this.idea.sender}
+							$scope.messages.add(message);
 							$scope.ideas.remove(this.idea);
+							
 						}
 						break;
 					}
