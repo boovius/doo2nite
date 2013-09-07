@@ -52,6 +52,8 @@ var doo2nite = angular.module('doo2nite.controllers', [])
 			};
 			
 			$scope.promote = function(index){
+				$scope.showNameInput = false;
+				$scope.showNameStatic = true;
 				var idea = {text: this.message.text, sender: this.message.sender, voted: [$scope.username]}
 				$scope.messages.remove(this.message);
 				$scope.ideas.add(idea);
@@ -62,6 +64,8 @@ var doo2nite = angular.module('doo2nite.controllers', [])
 			}
 
 			$scope.voteup = function(){
+				$scope.showNameInput = false;
+				$scope.showNameStatic = true;
 				var notVoted = true;
 				for (var i=0; i<this.idea.voted.length; i++){
 					if (this.idea.voted[i] === $scope.username){
