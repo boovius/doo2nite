@@ -1,11 +1,66 @@
+@media screen and (min-width: 320px) and (max-device-width: 419px) {
+  #app {
+    width: 320px;
+  }
+  #message-input {
+    padding: 5px 5px;
+  }
+
+  #input {
+    width: 75px;
+    padding-left: 10px;
+  }
+
+  .button {
+    width: 10%;
+  }
+}
+
+@media screen and (min-width: 420px) and (max-device-width: 480px) {
+  #app {
+    width: 480px;
+  }
+  #app {
+    width: 560px;
+  }
+  #message-input {
+    padding: 5px 5px;
+  }
+
+  #input {
+    width: 75%;
+    padding-left: 10px;
+  }
+
+  .button {
+    width: 20%;
+  }
+}
+
+@media screen and (min-width: 481px) {
+  #app {
+    width: 560px;
+  }
+  #message-input {
+    padding: 5px 5px;
+  }
+
+  #input {
+    width: 75%;
+    padding-left: 10px;
+  }
+
+  .button {
+    width: 20%;
+  }
+}
+
 body{
   background-image: url('../img/bg-nightlife.jpg');
 }
 
-
 #app {
   margin: 10% auto;
-  width: 480px;
   border: 12px inset rgba(255,255,255,.2); 
   border-radius: 15px;
   background-color: rgba(0,0,0,.8);
@@ -62,7 +117,7 @@ body{
 
 
 #ideabox {
-  height: 200px;
+  height: 250px;
   overflow: scroll;
 }
 
@@ -162,7 +217,7 @@ body{
 
 
 #messagebox {
-  height: 200px;
+  height: 250px;
   overflow: scroll;
   color: white;
 }
@@ -207,21 +262,17 @@ body{
   background-color: black;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
-  padding: 5px 5px;
   border-top: 1px solid rgba(255,255,255, .2); 
 }
 
 #input {
-  width: 75%;
   height: 50px;
   font-size: 1.2em;
   border-bottom-left-radius: 15px;
-  padding-left: 10px;
 }
 
 .button {
   float: right;
-  width: 20%;
 }
 
 .button input {
