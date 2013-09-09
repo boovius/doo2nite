@@ -25,8 +25,8 @@
     </div> <!-- end namebox -->
   </section> <!-- end divider section -->
   <section id='messagebox' message-scroll='messages'>
-    <div data-ng-repeat="message in messages" class='message'>
-      <span class='sender'>{{message.sender}}</span> - <span class='message-content' data-ng-click='promote()'>{{message.text}}</span>
+    <div data-ng-repeat="message in messages" class='message' data-ng-click='promote()'>
+      <span class='sender'>{{message.sender}}</span> - <span class='message-content'>{{message.text}}</span>
     </div>
   </section>
   <section id='message-input'>
