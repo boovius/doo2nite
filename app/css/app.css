@@ -70,7 +70,7 @@
 }
 
 body{
-  background-image: url('../img/bg-nightlife.jpg');
+  background-image: url('../img/Color-nightlife.jpg');
 }
 
 #app {
@@ -94,27 +94,29 @@ body{
 }
 
 #title-and-name div {
-  width: 27%;
+
 }
 
 #app-title{
   position: absolute;
   top: 7px;
   left: 12px;
-  font-size: 1.4em;
+  font-size: 1.6em;
 }
 
 .littles {
-  font-size: .4em;
+  font-size: .6em;
   color: white;
 }
 
 
 #controls {
   position: absolute;
+  padding-left: 10px;
   top: 10px;
   right: 10px;
   text-align: right;
+  border-left: 1px solid white
 }
 
 #controls a {
@@ -139,8 +141,9 @@ body{
 
 .idea {
   width: 80%;
-  border-bottom: 4px ridge black;
+  border: 2px outset #9BF0E9;
   margin: 0 auto;
+  margin-bottom: 10px;
 }
 
 .idea div { 
@@ -237,10 +240,9 @@ body{
 
 .message {
   width: 97%;
-  background-color: rgba(255,255,255,.3);
+  background-color:  rgba(155, 240, 233, .3);
   font-family: Georgia, serif;
   padding: 6px;
-  border-top: 2px ridge black;
   border: 2px outset #777;
   margin-bottom: 2px;
   cursor: pointer;
@@ -250,10 +252,19 @@ body{
    color: white;
 }
 
-.message-content:hover {
+.message:hover {
   font-size: 1.1em;
   color: #19DD89;
 }
+
+.message:hover .message-content{
+  color: #19DD89;
+}
+
+
+
+
+
 
 
 
