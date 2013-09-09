@@ -136,7 +136,7 @@ body{
 
 #controls {
   position: absolute;
-  padding-le
+  padding-left: 5px;
   top: 10px;
   right: 10px;
   text-align: right;
@@ -160,6 +160,7 @@ body{
   height: 220px;
   overflow: scroll;
   padding: 5px;
+  font-size: 1.3em;
 }
 
 
@@ -260,15 +261,16 @@ body{
   overflow: scroll;
   padding: 5px;
   color: #222;
+  font-size: 1.3em;
 }
 
 .message {
-  width: 97%;
+  width: 96%;
   background-color:  rgba(155, 240, 233, .3);
   font-family: Georgia, serif;
   padding: 6px;
-  border: 2px outset #777;
-  margin-bottom: 2px;
+  border: 4px outset #777;
+  margin-bottom: 4px;
   cursor: pointer;
 }
 
