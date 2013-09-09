@@ -1,6 +1,6 @@
 @media screen and (min-width: 320px) and (max-width: 464px) {
   #app {
-    width: 320px;
+    width: 100%;
   }
 
   #posits { 
@@ -24,7 +24,7 @@
 
 @media screen and (min-width: 465px) and (max-width: 499px)  {
   #app {
-    width: 450px;
+    width: 100%;
   }
 
   #posits { 
@@ -112,7 +112,7 @@ body{
 
 #controls {
   position: absolute;
-  padding-left: 10px;
+  padding-le
   top: 10px;
   right: 10px;
   text-align: right;
