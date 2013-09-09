@@ -138,7 +138,7 @@ body{
 
 
 .idea {
-  width: 90%;
+  width: 80%;
   border-bottom: 4px ridge black;
   margin: 0 auto;
 }
@@ -236,12 +236,13 @@ body{
 }
 
 .message {
-  width: 98%;
+  width: 97%;
   background-color: rgba(255,255,255,.3);
   font-family: Georgia, serif;
   padding: 6px;
   border-top: 2px ridge black;
-  border-bottom: 2px ridge black;
+  border: 2px outset #777;
+  margin-bottom: 2px;
   cursor: pointer;
 }
 
@@ -249,8 +250,9 @@ body{
    color: white;
 }
 
-.message:hover {
+.message-content:hover {
   font-size: 1.1em;
+  color: #19DD89;
 }
 
 
