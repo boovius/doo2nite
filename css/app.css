@@ -1,4 +1,4 @@
-@media screen and (min-width: 320px) and (min-device-width: 320px) and (max-device-width: 480px) {
+@media screen and (min-device-width: 320px) and (max-device-width: 480px) {
   #app {
     width: 100%;
   }
@@ -22,7 +22,7 @@
   }
 }
 
-@media screen and (min-width: 465px) and (max-width: 499px) and (min-device-width: 465px) and (max-device-width: 499px)  {
+@media screen and (min-device-width: 465px) and (max-device-width: 499px)  {
   #app {
     width: 100%;
   }
@@ -133,7 +133,7 @@ body{
 
 
 #ideabox {
-  height: 240px;
+  height: 220px;
   overflow: scroll;
   padding: 5px;
 }
@@ -232,7 +232,7 @@ body{
 
 
 #messagebox {
-  height: 240px;
+  height: 220px;
   overflow: scroll;
   padding: 5px;
   color: #222;
