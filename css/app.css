@@ -22,6 +22,30 @@
   }
 }
 
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  #app {
+    width: 100%;
+  }
+
+  #posits { 
+    text-align: left;
+    padding-left: 10px;
+  }
+
+  #message-input {
+    padding: 5px 5px;
+  }
+
+  #input {
+    width: 73%;
+    padding-left: 10px;
+  }
+
+  .button {
+    width: 20%;
+  }
+}
+
 @media screen and (min-device-width: 465px) and (max-device-width: 499px)  {
   #app {
     width: 100%;
