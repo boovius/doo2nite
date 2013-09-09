@@ -6,11 +6,9 @@
     <div id='controls'><a href='/doo2nite/#/new'>Rooms</a></div>
   </nav><!-- end title-and-name nav -->
   <section id='ideabox' idea-scroll='ideas'>
-    <ul>
-      <li class='idea' data-ng-repeat="idea in ideas | orderBy: 'voted.length':reverse=true">
-        <div id='idea-{{$index}}' class='box voted-{{votedon()}}' data-ng-click='voteup()'>{{idea.text}} - <span>{{idea.voted.length}}</span></div>
-      </li>
-    </ul>
+    <div class='idea' data-ng-repeat="idea in ideas | orderBy: 'voted.length':reverse=true">
+      <div id='idea-{{$index}}' class='box voted-{{votedon()}}' data-ng-click='voteup()'>{{idea.text}} - <span>{{idea.voted.length}}</span></div>
+    </div>
   </section> <!-- end ideabox section -->
   <section id='divider'>
     <div id='posits'>
@@ -27,11 +25,9 @@
     </div> <!-- end namebox -->
   </section> <!-- end divider section -->
   <section id='messagebox' message-scroll='messages'>
-    <ul>
-      <li data-ng-repeat="message in messages" class='message even-{{$even}}'>
-        <span class='sender'>{{message.sender}}</span> - <span class='message-content' data-ng-click='promote()'>{{message.text}}</span>
-      </li>
-    </ul>
+    <div data-ng-repeat="message in messages" class='message'>
+      <span class='sender'>{{message.sender}}</span> - <span class='message-content' data-ng-click='promote()'>{{message.text}}</span>
+    </div>
   </section>
   <section id='message-input'>
     <form data-ng-submit="addMessage()">

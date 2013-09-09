@@ -1,28 +1,36 @@
-@media screen and (min-width: 320px) and (max-device-width: 419px) {
+@media screen and (min-width: 320px) and (max-width: 464px) {
   #app {
     width: 320px;
   }
+
+  #posits { 
+    text-align: left;
+    padding-left: 10px;
+  }
+
   #message-input {
     padding: 5px 5px;
   }
 
   #input {
-    width: 75px;
+    width: 73%;
     padding-left: 10px;
   }
 
   .button {
-    width: 10%;
+    width: 20%;
   }
 }
 
-@media screen and (min-width: 420px) and (max-device-width: 480px) {
+@media screen and (min-width: 465px) and (max-width: 499px)  {
   #app {
-    width: 480px;
+    width: 450px;
   }
-  #app {
-    width: 560px;
+
+  #posits { 
+    text-align: center;
   }
+
   #message-input {
     padding: 5px 5px;
   }
@@ -37,12 +45,18 @@
   }
 }
 
-@media screen and (min-width: 481px) {
+@media screen and (min-width: 500px) {
   #app {
-    width: 560px;
+    width: 480px;
   }
+
   #message-input {
     padding: 5px 5px;
+  }
+
+  #posits { 
+    padding-left: 5px;
+    text-align: center;
   }
 
   #input {
@@ -117,17 +131,16 @@ body{
 
 
 #ideabox {
-  height: 250px;
+  height: 240px;
   overflow: scroll;
+  padding: 5px;
 }
 
-#ideabox ul {
-  list-style: none;
-}
 
 .idea {
-  width: 80%;
-  margin-bottom: 20px;
+  width: 90%;
+  border-bottom: 4px ridge black;
+  margin: 0 auto;
 }
 
 .idea div { 
@@ -142,13 +155,11 @@ body{
 }
 
 .voted-true {
-  width: 50%;
   margin: 0 auto;
   background-color: #19DD89;
 }
 
 .voted-false {
-  width: 50%;
   margin: 0 auto;
   background-color: #708D91;
 }
@@ -181,7 +192,7 @@ body{
 }
 
 #namebox { 
-  text-align: center;
+  
   color: #D31996;
   position: absolute;
   right: 5px;
@@ -190,6 +201,7 @@ body{
   padding-left: 10px;
   height: 100%;
 }
+
 #namebox-input {
   margin-top: 5px;
 }
@@ -217,43 +229,30 @@ body{
 
 
 #messagebox {
-  height: 250px;
+  height: 240px;
   overflow: scroll;
-  color: white;
-}
-
-#messagebox ul {
-  list-style: none;
+  padding: 5px;
+  color: #222;
 }
 
 .message {
-  width: 80%;
-  margin-bottom: 20px;
+  width: 98%;
+  background-color: rgba(255,255,255,.3);
+  font-family: Georgia, serif;
+  padding: 6px;
+  border-top: 2px ridge black;
+  border-bottom: 2px ridge black;
+  cursor: pointer;
 }
 
 .message-content {
-  background-color: #ccc;
-  border-radius: 7px;
-  padding: 6px;
-  cursor: pointer;
-  color: black;
+   color: white;
 }
 
-.even-true {
-  text-align: right;
+.message:hover {
+  font-size: 1.1em;
 }
 
-.even-false {
-  text-align: left;
-}
-
-.even-false .message-content {
-  background-color: #999;
-}
-
-.message-content:hover {
-  background-color: #708D91;  
-}
 
 
 /* message-input section */
