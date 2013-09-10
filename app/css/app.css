@@ -1,4 +1,4 @@
-@media screen and (min-device-width: 320px) and (max-device-width: 480px) {
+@media screen and (min-device-width: 319px) and (max-device-width: 480px) {
   #app {
     width: 100%;
   }
@@ -13,7 +13,7 @@
   }
 
   #input {
-    width: 73%;
+    width: 70%;
     padding-left: 10px;
   }
 
@@ -37,7 +37,7 @@
   }
 
   #input {
-    width: 73%;
+    width: 70%;
     padding-left: 10px;
   }
 
@@ -95,6 +95,7 @@
 
 body{
   background-image: url('../img/Color-nightlife.jpg');
+  font-family: 'Oswald', sans-serif;
 }
 
 #app {
@@ -129,10 +130,9 @@ body{
 }
 
 .littles {
-  font-size: .6em;
+  font-size: .3em;
   color: white;
 }
-
 
 #controls {
   position: absolute;
@@ -163,9 +163,8 @@ body{
   font-size: 1.3em;
 }
 
-
 .idea {
-  width: 80%;
+  width: 95%;
   border: 2px outset #9BF0E9;
   margin: 0 auto;
   margin-bottom: 10px;
@@ -175,11 +174,22 @@ body{
   padding: 6px; 
   text-align: center;
   word-wrap: break-word;
+  overflow: auto;
   cursor: pointer;
 }
 
 .idea div:hover {
   background-color: #19DD89;
+}
+
+.idea-content {
+  float:left;
+  width: 75%;
+}
+
+.idea-votes {
+  float:left;
+  width: 25%;
 }
 
 .voted-true {
@@ -200,10 +210,11 @@ body{
 /* divider section */
 
 
-#divider { 
-  height: 65px;
+#divider {
+  height: 70px;
   background-color: black;
   text-align: center;
+  font-size: .8em;
   border-top: 1px solid rgba(255,255,255, .2);
   border-bottom: 1px solid rgba(255,255,255, .2);
   position: relative;
@@ -267,7 +278,6 @@ body{
 .message {
   width: 96%;
   background-color:  rgba(155, 240, 233, .3);
-  font-family: Georgia, serif;
   padding: 6px;
   border: 4px outset #777;
   margin-bottom: 4px;
