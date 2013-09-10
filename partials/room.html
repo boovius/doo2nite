@@ -7,7 +7,10 @@
   </nav><!-- end title-and-name nav -->
   <section id='ideabox' idea-scroll='ideas'>
     <div class='idea' data-ng-repeat="idea in ideas | orderBy: 'voted.length':reverse=true">
-      <div id='idea-{{$index}}' class='box voted-{{votedon()}}' data-ng-click='voteup()'>{{idea.text}} - <span>{{idea.voted.length}}</span></div>
+      <div id='idea-{{$index}}' class='box voted-{{votedon()}}' data-ng-click='voteup()'>
+        <div class='idea-content'>{{idea.text}}</div>
+        <div class=='idea-votes'>{{idea.voted.length}}</div>
+      </div>
     </div>
   </section> <!-- end ideabox section -->
   <section id='divider'>
@@ -32,7 +35,7 @@
   <section id='message-input'>
     <form data-ng-submit="addMessage()">
       <input type='text' id='input' data-ng-model='messageText' placeholder='...type suggestion here'/>
-      <div class='button'><input type="submit" value="Send"/></div>
+      <div class='button'><input type="submit" value="SEND"/></div>
     </form>
   </section> <!-- end message-input section -->
 
